@@ -108,7 +108,7 @@ export default function App() {
           <div className="space-y-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-light text-black mb-3">Welcome</h2>
-              <p className="text-gray-600 text-sm">Please enter your location to get started</p>
+              <p className="text-gray-600 text-sm">Enter location you wish to receive news from</p>
             </div>
             <input
               type="text"
