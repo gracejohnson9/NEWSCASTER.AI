@@ -182,7 +182,7 @@ export default function App() {
           </div>
         )}
 
-        {step < 3 && (
+        {step < 2 && (
           <button
             onClick={handleNext}
             disabled={!canProceed()}
@@ -195,6 +195,45 @@ export default function App() {
             Continue
             <ChevronRight className="w-4 h-4" />
           </button>
+        )}
+
+        {step === 2 && (
+          <button
+            onClick={handleNext}
+            disabled={!canProceed()}
+            className={`w-full mt-12 py-4 font-light text-sm uppercase tracking-wide transition-all flex items-center justify-center gap-2 ${
+              canProceed()
+                ? 'bg-black text-white hover:bg-gray-800'
+                : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+            }`}
+          >
+            Complete
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        )}
+
+        {step === 3 && (
+          <div className="space-y-8 text-center">
+            <div className="mb-12">
+              <h2 className="text-3xl font-light text-black mb-3">All Set!</h2>
+              <p className="text-gray-600 text-sm mb-6">Your preferences have been saved.</p>
+              <div className="bg-white/50 p-6 rounded-lg text-left space-y-2">
+                <p className="text-sm"><strong>Location:</strong> {preferences.location}</p>
+                <p className="text-sm"><strong>Topics:</strong> {preferences.topics.map(t => newsTopics.find(topic => topic.id === t)?.label).join(', ')}</p>
+                {preferences.customTopic && <p className="text-sm"><strong>Custom Topic:</strong> {preferences.customTopic}</p>}
+                <p className="text-sm"><strong>Style:</strong> {newsStyles.find(s => s.id === preferences.style)?.label}</p>
+              </div>
+            </div>
+            <button
+              onClick={() => {
+                setStep(0);
+                setPreferences({ location: '', topics: [], customTopic: '', style: '' });
+              }}
+              className="w-full mt-12 py-4 font-light text-sm uppercase tracking-wide bg-black text-white hover:bg-gray-800 transition-all"
+            >
+              Start Over
+            </button>
+          </div>
         )}
       </div>
     </div>
