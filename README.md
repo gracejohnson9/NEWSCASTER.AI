@@ -4,10 +4,10 @@ A beautiful, interactive news preferences wizard built with React and Vite. Cust
 
 ## Features
 
-- 🎨 Dynamic gradient backgrounds that change based on your selected style
-- 📍 Location-based news preferences
-- 🎯 Topic selection (Politics, Technology, Sports, Finance, and more)
-- 🎭 Multiple delivery styles:
+- Dynamic gradient backgrounds that change based on your selected style
+- Location-based news preferences
+- Topic selection (Politics, Technology, Sports, Finance, and more)
+- Multiple delivery styles:
   - **Professional**: Formal and factual
   - **Goofy**: Fun and lighthearted
   - **Elmo**: Friendly and simple
